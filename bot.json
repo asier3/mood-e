@@ -1,0 +1,56 @@
+[
+    {
+      "response_type": "greeting",
+      "user_input": ["hello", "hi", "hey"],
+      "bot_response": ["Hey there! Do you need me?", "Hello! How can I help you?", "Did you call me?"],
+      "required_words": []
+    },
+    {
+      "response_type": "greeting",
+      "user_input": ["this", "is", "my", "name"],
+      "bot_response": ["I didn't forget about your name :), tell me how can I help you", "I know hehe, what do you need?"],
+      "required_words": ["name"]
+    },
+    {
+      "response_type": "greeting",
+      "user_input": ["see you", "goodbye", "bye"],
+      "bot_response": ["See you later!"],
+      "required_words": []
+    },
+    {
+      "response_type": "greeting",
+      "user_input": ["nice", "to", "meet", "you"],
+      "bot_response": ["The pleasure is all mine!"],
+      "required_words": ["nice", "meet", "you"]
+    },
+    {
+      "response_type": "customer service",
+      "user_input": ["i", "have", "problem", "trouble"],
+      "bot_response": ["I'm here to help you, could you please tell me more about it?"],
+      "required_words": ["i", "problem"]
+    },
+    {
+      "response_type": "customer service",
+      "user_input": ["flight", "cancel", "cancelled", "my"],
+      "bot_response": [" I am so sorry that your flight was cancelled. Could you please tell me your booking reference?"],
+      "required_words": ["flight"]
+    },
+    {
+      "response_type": "customer service",
+      "user_input": ["booking", "reference", "number", "code", "is", "my"],
+      "bot_response": ["I can see the details of the cancelled flight now. What would you like to do in order to help us solve this problem? You can reeschedule your flight, get a voucher or get a refund."],
+      "required_words": ["booking"]
+    },
+    {
+      "response_type": "reeschedule",
+      "user_input": ["i", "would", "like", "want", "to", "reeschedule"],
+      "bot_response": ["To reeschedule your flight, you can go to https://flywithus.com/ and choose the flight you would like to be reescheduled to. Is there anything else I can help you with?"],
+      "required_words": ["reeschedule"]
+    },
+    {
+      "response_type": "refund",
+      "user_input": ["i", "would", "like", "want", "to", "get", "a", "refund"],
+      "bot_response": ["Okay, the refund will be made within 3 to 5 days. It will be done with the same payment method you used. Is there anything else I can help you with?"],
+      "required_words": ["refund"]
+    }
+]

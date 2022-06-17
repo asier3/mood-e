@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <title>ChatBot</title>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      html {
+          height:100%;
+          position:relative;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+      }
+      body {
+        height:100%;
+        font-family: 'Montserrat', sans-serif;
+        background: rgb(216,203,255);
+        background: linear-gradient(190deg, rgba(216,203,255,1) 35%, rgba(255,245,226,1) 90%);
+        background-position: center 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+      h1 {
+        color: #7a6f84;
+        display: inline-block;
+        font-size: 2em;
+        margin: 0;
+        padding: 10px;
+      }
+      center{
+        grid-row: 1;
+        grid-column:1;
+      }
+      #chatbox {
+        grid-row: 2;
+        grid-column:1;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        overflow-y: scroll;
+      }
+      #chatbox::-webkit-scrollbar{display:none;}
+      #userInput {
+        grid-row: 3;
+        grid-column: 1;
+        width: 50%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        bottom: 0;
+        display: flex;
+      }
+      #mainpage {
+        position: relative;
+        height:100%;
+        display: grid;
+        grid-template-rows: 70px auto 50px 8px;
+      }
+      #textInput {
+        width: 100%;
+        padding: 8px;
+        opacity: 0.7;
+        background-color: #ffffff7c;
+        text-align: left;
+        border: none;
+        border-bottom: 3px solid rgba(87, 87, 87, 0.719);
+        font-family:'Montserrat', sans-serif;
+        font-size: 16px;
+      }
+      .userText {
+        color: #7a6f84;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        text-align: right;
+        line-height: 30px;
+      }
+      .userText span {
+        background-color: #e6a1ffbc;
+        display: inline-block;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .botText {
+        color: #7a6f84;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        text-align: left;
+        line-height: 30px;
+      }
+      .botText span {
+        background-color: #fffebac5;
+        display: inline-block;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      #tidbit {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+      }
+      #boxed {
+        height:100%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 78%;
+        /*height: 90vh;*/
+      }
+      .title{
+        justify-content: center;
+        font-size: 78px;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+
+    <div id="boxed">
+      <div id="mainpage">
+        <center>
+          <h1>
+            Mood·e - Fly With Us assistant
+          </h1>
+        </center>
+        <div id="chatbox">
+          <p class="botText">
+            <span>Hello! This is the virtual assistant of Fly With Us.</span>
+          </p>
+          <p class="botText">
+            <span>Could you please tell me your name so I can better adress you?</span>
+          </p>
+        </div>
+
+        <div id="userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Enter message here..." autocomplete="off"/>
+        </div>
+        <div id="bottomMargin"> 
+
+        </div>
+      </div>
+
+
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+            if (rawText == 'agent'){
+
+              window.location.href = 'endpage'
+
+            }
+            else{
+              var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+            $.get("/get", { msg: rawText }).done(function(data) {
+              var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+              $("#chatbox").append(botHtml);
+              document
+                .getElementById("userInput")
+                .scrollIntoView({ block: "start", behavior: "smooth" });
+            });
+            }
+            console.log(rawText)
+     
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+            const el = document.getElementById("chatbox");
+            el.scrollTo(0, el.scrollHeight);
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

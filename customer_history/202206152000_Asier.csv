@@ -1,0 +1,6 @@
+time,customer inputs,bot response,sentiment score
+19:59:35,My flight has been cancelled, I am so sorry that your flight was cancelled. Could you please tell me your booking reference?,0.68
+19:59:49,"yes, the booking ref is 4637H","I can see the details of the cancelled flight now. What would you like to do in order to help us solve this problem? You can reeschedule your flight, get a voucher or get a refund.",0.79
+20:00:01,I would like to reeschedule my flight,"To reeschedule your flight, you can go to https://flywithus.com/ and choose the flight you would like to be reescheduled to. Is there anything else I can help you with?",0.43
+20:00:14,ugh,Please try writing something more descriptive.,0.6
+20:00:22,you are the most useless thing,"I'm sorry, I have been programmed to give the best customer service but seems that I failed.",0.04

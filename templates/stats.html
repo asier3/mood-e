@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        html {
+            height:100%;
+        }
+        body {
+            height:100%;
+            font-family: 'Montserrat', sans-serif;
+            background: rgb(216,203,255);
+            background: linear-gradient(190deg, rgba(216,203,255,1) 35%, rgba(255,245,226,1) 90%);
+            background-position: center 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -ms-background-size: cover;
+            display: grid;
+            grid-template-columns: 5% 90% 5%;
+            grid-template-rows: 100px auto auto auto;
+            justify-content: center;
+            justify-items: center;
+        }
+        h1 {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .averages {
+            grid-column: 2;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            justify-items: center;
+        }
+        .tablehist {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        img {
+            grid-column: 2;
+            grid-row: 4;
+        }
+        .avgtime {
+            grid-column: 1;
+        }
+        .avscore {
+            grid-column: 2;
+        }
+        .message {
+            grid-column: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Customer stats</h1>
+
+    <div class="averages">
+        <div class="avgtime">
+            total time = {{time}}
+        </div>
+
+        <div class="avscore">
+            average sentiment score = {{averagepos}}
+        </div>
+
+        <div class="message">
+            number of messages = {{messages}}
+        </div>
+    </div>
+
+    <div class="tablehist">
+        {{table | safe}}
+    </div>
+
+<img src="static\test.png">
+
+</body>
+</html>
