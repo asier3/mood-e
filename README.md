@@ -31,5 +31,8 @@ the quality of the service given. The sentiment model can be trained with past d
 as well as the chatbot. In addition, all the data collected will help to get useful insights for the company, the better
 you know your customers, the better you will serve them!
 
-Check my LinkedIn for more info!
+Check my Portfolio for more info!
+https://troopl.com/asierodriguez/moode
+
+You can also check my Linkedin
 https://www.linkedin.com/in/asierodriguez/
