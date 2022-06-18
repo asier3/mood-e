@@ -7,11 +7,11 @@ pre-trained to detect sentiment and fine-tuned with an IMDB database with 50,000
 positive or negative (link below). The model can detect the sentiment on a text from 0 (most negative) 
 to 1 (most positive). 
 
-The chatbot stores the history of the conversation into a separate CSV file and calculates: the conversation time, the average sentiment score of the whole conversation, and the
-number of messages sent by the customer. It also plots the sentiment scores against time in order
-to show the evolution of the mood of the customer throughout the conversation.
+The chatbot stores the history of the conversation into a separate CSV file and calculates: the conversation time, the average sentiment score of the whole conversation, and the number of messages sent by the customer. It also plots the sentiment scores against time in order to show the evolution of the mood of the customer throughout the conversation.
 
 The chatbot has been developed in python and implemented into HTML with flask.
+
+DEMO VIDEO: https://www.youtube.com/watch?v=WY8RsDuDVp0&t
 
 The steps I followed to complete this project were:
 
@@ -31,7 +31,5 @@ the quality of the service given. The sentiment model can be trained with past d
 as well as the chatbot. In addition, all the data collected will help to get useful insights for the company, the better
 you know your customers, the better you will serve them!
 
-Check my GitHub or LinkedIn for more info!
-
-Github: https://www.linkedin.com/in/asierodriguez/
-Linkedin: https://github.com/asier3
+Check my LinkedIn for more info!
+https://www.linkedin.com/in/asierodriguez/
