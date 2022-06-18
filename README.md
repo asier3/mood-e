@@ -18,6 +18,7 @@ The steps I followed to complete this project were:
 1 - Create a basic chatbot and train it to answer specific queries (in this case a flight cancellation).
 
 2 - Download a BERT pre-trained model to detect sentiment and fine-tune it with the IMDB review database.
+
 (BERT sentiment model: https://colab.research.google.com/drive/1heHu8DA1Cp385ZQta6_T9CVnK1qOYext)
 (IMDB review database: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
 
